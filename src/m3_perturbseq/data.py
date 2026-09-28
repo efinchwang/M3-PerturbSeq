@@ -1,4 +1,4 @@
-"""Data preparation for the fixed Jiang24 TGF-beta half-holdout experiment."""
+﻿"""Data preparation for the fixed Jiang24 TGF-beta half-holdout experiment."""
 
 from __future__ import annotations
 
@@ -80,7 +80,8 @@ def _process_rna_counts(count: torch.Tensor, count_list, hvg_num: int = 2000):
     nonzero_mask = count_concat.sum(dim=1) != 0
     count_nonzero = count_concat[nonzero_mask]
     _, hvg_mask = process_highly_variable_genes(count_nonzero, hvg_num)
-    return count[:, hvg_mask], np.asarray(hvg_mask, dtype=bool)
+    hvg_mask = np.asarray(hvg_mask, dtype=bool)
+    return count[:, hvg_mask], hvg_mask
 
 
 def prepare_h5ad(
@@ -102,7 +103,7 @@ def prepare_h5ad(
     absence is verified; Q condition CE remains masked during training.
     """
     import scanpy as sc
-    from m3 import Dataset
+    from m3._dataset import Dataset
     from m3 import _bridge
     from m3._engine.util import (
         convert_to_longtensor,
@@ -341,3 +342,4 @@ def prepare_h5ad(
         )
     finally:
         shutil.rmtree(marshalled["tmpdir"], ignore_errors=True)
+
