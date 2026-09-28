@@ -1,41 +1,13 @@
-﻿# Python
 __pycache__/
 *.py[cod]
-.pytest_cache/
 .venv/
-venv/
-
-# Editors / OS
 .vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Data
 data/
-Raw Data/
+runs/
 *.h5ad
 *.h5
-*.loom
-
-# Model artifacts
-*.pth
 *.pt
-*.ckpt
-checkpoints/
-outputs/
-runs/
+*.npy
 
-# Local environment
-.env
-.env.*
-*.local
-
-# Notebooks
-.ipynb_checkpoints/
-
-# Local authenticated PCA artifacts
-artifacts/pca/*.npy
-
-# Temporary source-audit bundle
-winner_source_bundle.txt
+*.ipynb
+Result/
