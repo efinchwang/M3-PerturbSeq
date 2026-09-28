@@ -1,0 +1,102 @@
+{
+  "schema": "m3_phase_experiment_manifest_v1",
+  "experiment_id": "pca_context_head_residual_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+  "candidate_only": true,
+  "immutable": true,
+  "rank": 64,
+  "run_root": "Jiang24/experiments/pca_context_head_residual/runs/pca_context_head_residual_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+  "basis_source": "Jiang24/experiments/pca_condition_mean/runs/pca_condition_mean_seed0_retry1",
+  "basis_source_rank": 64,
+  "basis_selection": "exact archived rank64 BASIS_PASS basis",
+  "basis_fit": {
+    "rows": 14144,
+    "features": 2000,
+    "subset_by_index": [1936, 1999],
+    "basis_refit": false
+  },
+  "parameters": {
+    "target": 452,
+    "retained": 56000,
+    "total": 56452
+  },
+  "training": {
+    "seed": 0,
+    "epochs": 100,
+    "lr": 0.0001,
+    "batch_size": 256,
+    "weight_decay": 0.05
+  },
+  "approved_intervention": {
+    "field": "generator.encoder.encoders_mean[0][3].p",
+    "baseline": 0.2,
+    "candidate": 0.5,
+    "scope": "RNA mean encoder only; all 30 coordinates",
+    "optimizer_contract": {
+      "optimizer": "AdamW",
+      "baseline_weight_decay": 0.01,
+      "applied_weight_decay": 0.05,
+      "learning_rate": 0.0001,
+      "constructor_count": 1,
+      "group_count": 1,
+      "scope": "single train_M3_with_query call"
+    }
+  },
+  "head_intervention": {
+    "field": "condition_classifiers[0] centered affine context residual",
+    "stored_parameters": 18,
+    "identifiable_degrees_of_freedom": 15,
+    "formula": "shared(z)+[-d/2,+d/2]; d=<A_l-mean(A),z>+(b_l-mean(b))",
+    "initialization": "exact zero; no RNG draw",
+    "line_order": [
+      "A549",
+      "BXPC3",
+      "HAP1",
+      "HT29",
+      "K562",
+      "MCF7"
+    ]
+  },
+  "context_intervention": {
+    "field": "z_base + A[line] @ (B @ s)",
+    "rank": 4,
+    "B_shape": [
+      4,
+      64
+    ],
+    "A_shape": [
+      6,
+      2,
+      4
+    ],
+    "private_cpu_seed": 20260927,
+    "line_order": ["A549", "BXPC3", "HAP1", "HT29", "K562", "MCF7"],
+    "parameters": 304,
+    "confirmation_status": "LOCKED_UNEVALUATED"
+  },
+  "masked_input": {
+    "path": "Jiang24/experiments/pca_context_head_residual/inputs/pca_context_uniform_r_masked_15715.h5ad",
+    "sha256": "b3c408d1e7281fc3a8e0dbd9f6b5479480d38748251324946b746891fbcc544d",
+    "bytes": 90719909,
+    "receipt_path": "Jiang24/experiments/pca_context_head_residual/inputs/MASKED_INPUT_PASS.json",
+    "receipt_sha256": "717e7dafe244bbcc98abb42a36d11d65be43e4ae350e7764bf136e2607793c25"
+  },
+  "head_control_mapping": {
+    "path": "Jiang24/experiments/pca_context_head_residual/head_control_mapping.json",
+    "sha256": "df68fbd9337af222d944dce0d88c11c89ccd59bb0fd1d786c9614b6cecc8cc1c",
+    "salt": "pca_context_head_residual_control_v1_20260927",
+    "ordered_group_sizes": [
+      2922,
+      1133,
+      5230,
+      3967,
+      1494,
+      969
+    ],
+    "assignment_records_sha256": "d696c66816f6c4ca92cb72ec6e21141196989cb08a4e06097021626c1ffd43b1"
+  },
+  "evaluation": {
+    "full_and_shared_only_logits_from_same_checkpoint": true,
+    "Q_truth_used_for_training": false
+  },
+  "confirmation_status": "LOCKED_UNEVALUATED"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_DEVELOPMENT_WINNER",
+  "confirmation_status": "LOCKED_UNEVALUATED",
+  "selection_policy": {
+    "primary_metric": "Q_train macro AUROC",
+    "Q_best": 0.8030994802058894,
+    "near_best_threshold": 0.005,
+    "secondary_metric": "minimize abs(R_train macro AUROC - Q_train macro AUROC)",
+    "tie_break": "higher Q_train macro AUROC",
+    "eligible_candidate_count": 8
+  },
+  "eligible_near_best_candidates": [
+    {
+      "experiment_id": "pca_context_head_residual_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.8030994802058894,
+      "R_train_macro_AUROC": 0.8947075425381404,
+      "absolute_R_Q_gap": 0.09160806233225105
+    },
+    {
+      "experiment_id": "pca_context_hidden_film_rank1_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.8029411765345604,
+      "R_train_macro_AUROC": 0.9031847631608184,
+      "absolute_R_Q_gap": 0.10024358662625799
+    },
+    {
+      "experiment_id": "pca_context_modulation_rank8_rank64_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.8023912546498578,
+      "R_train_macro_AUROC": 0.904264080347114,
+      "absolute_R_Q_gap": 0.1018728256972562
+    },
+    {
+      "experiment_id": "pca_context_modulation_rank64_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.8019715231857475,
+      "R_train_macro_AUROC": 0.9039579755199916,
+      "absolute_R_Q_gap": 0.10198645233424408
+    },
+    {
+      "experiment_id": "pca_context_linear_head_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.8002433646086828,
+      "R_train_macro_AUROC": 0.926771523193344,
+      "absolute_R_Q_gap": 0.12652815858466115
+    },
+    {
+      "experiment_id": "pca_condition_mean_rank64_mean_drop60_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.7984788604708529,
+      "R_train_macro_AUROC": 0.8969930631354895,
+      "absolute_R_Q_gap": 0.09851420266463662
+    },
+    {
+      "experiment_id": "pca_context_uniform_r_rank64_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.7983110894183212,
+      "R_train_macro_AUROC": 0.9055379156310238,
+      "absolute_R_Q_gap": 0.10722682621270263
+    },
+    {
+      "experiment_id": "pca_condition_mean_rank64_mean_drop50_wd5e2_epoch100_seed0",
+      "Q_train_macro_AUROC": 0.7981987240518477,
+      "R_train_macro_AUROC": 0.9067164468066796,
+      "absolute_R_Q_gap": 0.10851772275483196
+    }
+  ],
+  "selected": {
+    "experiment_id": "pca_context_head_residual_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+    "Q_train_macro_AUROC": 0.8030994802058894,
+    "R_train_macro_AUROC": 0.8947075425381404,
+    "absolute_R_Q_gap": 0.09160806233225105,
+    "run_directory": "Jiang24/experiments/pca_context_head_residual/runs/pca_context_head_residual_rank64_ctx4_drop50_wd5e2_epoch100_seed0",
+    "checkpoint": "terminal_generator.state_dict.pt"
+  },
+  "evaluation": {
+    "positive_class": "TGFBR1",
+    "score": "logit_class_1_minus_logit_class_0",
+    "Q_train_cells": 7037,
+    "validated_metrics": "Jiang24/final_reproducibility/VALIDATED_METRICS.json",
+    "overall_AUROC": 0.8633263500690755,
+    "overall_balanced_accuracy": 0.73733676748862
+  },
+  "safeguards": {
+    "Q_truth_entered_training_gradients": false,
+    "confirmation_data_used": false,
+    "checkpoint_reconstruction_matches_archived_logits": true,
+    "training_audit": "PASS",
+    "export_audit": "PASS"
+  },
+  "sha256": {
+    "DEVELOPMENT_LEADERBOARD.json": "f9f56642b0827f774a06ebf81dc4ef429f551d8679e77991a01ae54e426ae671",
+    "experiment_manifest.json": "3976c97a6768e3e07a7919432e238d888e6c271d3fbec62ce78673d8b866cddc",
+    "terminal_generator.state_dict.pt": "164390fcdad8ba96620340d2edf2e0961442e9250eab6cfaae6c0fb0d25dd54d",
+    "screen_result.json": "8cab076e8837fa202a0fd512c448153fa628f2ce2f05ab6abb038daccc738feb",
+    "TRAINING_AUDIT_PASS.json": "2d7ee64e66ba698d25bdd35bb9c3866584159b1c707e7c0a9c89171ac47f73c0",
+    "train_final_model.py": "26265e4d707593ca673d7d1a1f9b71ac40b6c8d18895d3e1388c4654290f8582",
+    "evaluate_final_model.py": "83dd4ecd6e48179b59471bce872d19748c8e70681ba350da1371568979133bb8",
+    "README.md": "f4402511c0b844642a4ad59c6c20d4d8ddee81a83df776529dbeee8dea90c956",
+    "VALIDATED_METRICS.json": "8b12244c0a54a7bc0b1a83c2cd0dc003862b8f8b4e56304d83e880352e3127d5"
+  }
+}

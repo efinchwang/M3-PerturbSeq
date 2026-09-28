@@ -1,0 +1,35 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data
+data/
+Raw Data/
+*.h5ad
+*.h5
+*.loom
+
+# Model artifacts
+*.pth
+*.pt
+*.ckpt
+checkpoints/
+outputs/
+runs/
+
+# Local environment
+.env
+.env.*
+*.local
+
+# Notebooks
+.ipynb_checkpoints/

@@ -1,0 +1,4 @@
+[submodule "vendor/M3"]
+	path = vendor/M3
+	url = https://github.com/efinchwang/M3.git
+	branch = query-cell-holdout
