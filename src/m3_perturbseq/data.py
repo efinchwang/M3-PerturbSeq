@@ -1,4 +1,4 @@
-﻿"""Data preparation for the fixed Jiang24 TGF-beta half-holdout experiment."""
+"""Data preparation for the fixed Jiang24 TGF-beta half-holdout experiment."""
 
 from __future__ import annotations
 
