@@ -33,3 +33,9 @@ runs/
 
 # Notebooks
 .ipynb_checkpoints/
+
+# Local authenticated PCA artifacts
+artifacts/pca/*.npy
+
+# Temporary source-audit bundle
+winner_source_bundle.txt
